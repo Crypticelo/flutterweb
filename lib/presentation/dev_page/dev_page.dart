@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterweb/presentation/core/page_wrapper/page_template.dart';
+import 'package:flutterweb/presentation/dev_page/widgets/dev_start.dart';
 
 class DevPage extends StatelessWidget {
   static const String devPagePath = "/development";
@@ -11,10 +12,15 @@ class DevPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const PageTemplate(
-      child: Placeholder(
-        color: Colors.red,
-      ),
+    List<Widget> partblocks = [
+      const DevelopmentStart(),
+    ];
+    return PageTemplate(
+      child: ListView.builder(
+          itemCount: partblocks.length,
+          itemBuilder: (context, index) {
+            return partblocks[index];
+          }),
     );
   }
 }

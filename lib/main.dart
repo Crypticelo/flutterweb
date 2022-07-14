@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterweb/presentation/dev_page/dev_page.dart';
 import 'package:flutterweb/presentation/eco_page/eco_page.dart';
 import 'package:flutterweb/presentation/home_page/homepage.dart';
+import 'package:flutterweb/presentation/not_found_page/not_found_page.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:routemaster/routemaster.dart';
 import 'package:url_strategy/url_strategy.dart';
@@ -14,10 +15,7 @@ void main() {
 final routes = RouteMap(
   onUnknownRoute: (route) {
     print(route);
-    return const MaterialPage(
-        child: Placeholder(
-      color: Colors.yellow,
-    ));
+    return const MaterialPage(child: NotFoundPage());
   },
   routes: {
     "/": (_) => Redirect(HomePage.homePagePath),

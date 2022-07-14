@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterweb/presentation/core/page_wrapper/page_template.dart';
+import 'package:flutterweb/presentation/eco_page/widgets/ecosystem.dart';
 
 class EcoPage extends StatelessWidget {
   static const String ecoPagePath = "/ecosystem";
@@ -11,7 +12,7 @@ class EcoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const PageTemplate(
-      child: Placeholder(color: Colors.blue),
+      child: Ecosystem(),
     );
   }
 }

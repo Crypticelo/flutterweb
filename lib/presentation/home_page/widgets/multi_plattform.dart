@@ -89,7 +89,7 @@ class MultiPlatform extends StatelessWidget {
             ],
           ),
           ResponsiveRowColumn(
-            columnVerticalDirection: VerticalDirection.up,
+            columnVerticalDirection: VerticalDirection.down,
             rowCrossAxisAlignment: CrossAxisAlignment.center,
             layout: responsiveValue.isSmallerThan(DESKTOP)
                 ? ResponsiveRowColumnType.COLUMN
