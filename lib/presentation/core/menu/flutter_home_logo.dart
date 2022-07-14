@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutterweb/presentation/dev_page/dev_page.dart';
+import 'package:flutterweb/presentation/home_page/homepage.dart';
+import 'package:routemaster/routemaster.dart';
 
 class FlutterHomeLogo extends StatelessWidget {
   const FlutterHomeLogo({Key? key}) : super(key: key);
@@ -11,7 +14,7 @@ class FlutterHomeLogo extends StatelessWidget {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () {
-          print("logo tapped");
+          Routemaster.of(context).push(HomePage.homePagePath);
         },
         child: Image.asset(
           "assets/images/flutter_logo_text.png",

@@ -1,21 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutterweb/presentation/dev_page/dev_page.dart';
+import 'package:flutterweb/presentation/eco_page/eco_page.dart';
 import 'package:flutterweb/presentation/home_page/homepage.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:routemaster/routemaster.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
+  setPathUrlStrategy();
   runApp(const MyApp());
 }
+
+final routes = RouteMap(
+  onUnknownRoute: (route) {
+    print(route);
+    return const MaterialPage(
+        child: Placeholder(
+      color: Colors.yellow,
+    ));
+  },
+  routes: {
+    "/": (_) => Redirect(HomePage.homePagePath),
+    HomePage.homePagePath: (_) => const MaterialPage(child: HomePage()),
+    '/development': (_) => const MaterialPage(child: DevPage()),
+    '/ecosystem': (_) => const MaterialPage(child: EcoPage()),
+  },
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routeInformationParser: const RoutemasterParser(),
+      routerDelegate: RoutemasterDelegate(routesBuilder: (context) => routes),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Web',
-      home: HomePage(),
       builder: (context, widget) => ResponsiveWrapper.builder(
         widget,
         defaultScale: true,

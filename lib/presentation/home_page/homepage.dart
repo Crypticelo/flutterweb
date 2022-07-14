@@ -7,6 +7,7 @@ import 'package:flutterweb/presentation/core/page_wrapper/page_template.dart';
 import 'package:flutterweb/presentation/home_page/widgets/multi_plattform.dart';
 
 class HomePage extends StatelessWidget {
+  static String homePagePath = "/home";
   const HomePage({Key? key}) : super(key: key);
 
   @override

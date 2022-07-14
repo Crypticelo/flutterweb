@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterweb/presentation/core/buttons/get_started.dart';
 import 'package:flutterweb/presentation/core/menu/flutter_home_logo.dart';
 import 'package:flutterweb/presentation/core/menu/menu_item.dart';
+import 'package:flutterweb/presentation/dev_page/dev_page.dart';
+import 'package:flutterweb/presentation/eco_page/eco_page.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class MenuBar extends StatelessWidget {
@@ -31,18 +33,22 @@ class MenuBar extends StatelessWidget {
           MenuItemNew(
             text: "Docs",
             inDrawer: false,
+            path: "",
           ),
           MenuItemNew(
             text: "Showcase",
             inDrawer: false,
+            path: "",
           ),
           MenuItemNew(
             text: "Development",
             inDrawer: false,
+            path: DevPage.devPagePath,
           ),
           MenuItemNew(
             text: "Ecosystem",
             inDrawer: false,
+            path: EcoPage.ecoPagePath,
           ),
           GetStartedButton(
             inDrawer: false,
