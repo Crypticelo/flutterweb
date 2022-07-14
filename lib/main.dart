@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       routeInformationParser: const RoutemasterParser(),
       routerDelegate: RoutemasterDelegate(routesBuilder: (context) => routes),
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Web',
+      title: 'Flutter Web Test',
       builder: (context, widget) => ResponsiveWrapper.builder(
         widget,
         defaultScale: true,

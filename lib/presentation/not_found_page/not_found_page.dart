@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterweb/constants.dart';
+import 'package:flutterweb/presentation/core/buttons/call_to_action.dart';
 import 'package:flutterweb/presentation/core/page_wrapper/centered_constrained_warpper.dart';
 import 'package:flutterweb/presentation/core/page_wrapper/page_template.dart';
+import 'package:flutterweb/presentation/home_page/homepage.dart';
+import 'package:routemaster/routemaster.dart';
 
 class NotFoundPage extends StatelessWidget {
   const NotFoundPage({Key? key}) : super(key: key);
@@ -21,14 +24,50 @@ class NotFoundPage extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     "Sorry, we couldn't find that page.",
                     style: TextStyle(
                         fontFamily: fontFamily,
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,
                         fontSize: 20),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    "404",
+                    style: TextStyle(
+                        fontFamily: fontFamily,
+                        color: textPrimaryLight,
+                        fontWeight: FontWeight.bold,
+                        height: 0.9,
+                        fontSize: 60),
+                  ),
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(maxHeight: 300),
+                    child: Image.asset("assets/images/mixer.png"),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    "But maybe you find find help starting back from the homepage",
+                    style: TextStyle(
+                        fontFamily: fontFamily,
+                        color: textPrimaryLight,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CallToAction(
+                    text: "Back to homepage",
+                    callback: () {
+                      Routemaster.of(context).push(HomePage.homePagePath);
+                    },
                   ),
                 ],
               ),

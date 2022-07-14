@@ -4,7 +4,9 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutterweb/constants.dart';
 import 'package:flutterweb/presentation/core/buttons/call_to_action.dart';
+import 'package:flutterweb/presentation/home_page/homepage.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:routemaster/routemaster.dart';
 
 class MultiPlatform extends StatelessWidget {
   const MultiPlatform({Key? key}) : super(key: key);
@@ -72,7 +74,10 @@ class MultiPlatform extends StatelessWidget {
                       const SizedBox(
                         height: 25,
                       ),
-                      const CallToAction(text: "See the target platforms"),
+                      CallToAction(
+                        text: "See the target platforms",
+                        callback: () {},
+                      ),
                     ],
                   ),
                 ),
@@ -152,7 +157,12 @@ class MultiPlatform extends StatelessWidget {
                       const SizedBox(
                         height: 25,
                       ),
-                      const CallToAction(text: "Flutter for developers"),
+                      CallToAction(
+                        text: "Flutter for developers",
+                        callback: () {
+                          Routemaster.of(context).push(HomePage.homePagePath);
+                        },
+                      ),
                     ],
                   ),
                 ),

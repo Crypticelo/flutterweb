@@ -6,7 +6,9 @@ import 'package:flutterweb/constants.dart';
 
 class CallToAction extends StatelessWidget {
   final String text;
-  const CallToAction({Key? key, required this.text}) : super(key: key);
+  final Function callback;
+  const CallToAction({Key? key, required this.text, required this.callback})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class CallToAction extends StatelessWidget {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () {
-          print("call to action pressed");
+          callback();
         },
         child: Material(
           elevation: 6,
