@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterweb/presentation/core/buttons/get_started.dart';
 import 'package:flutterweb/presentation/core/menu/flutter_home_logo.dart';
 import 'package:flutterweb/presentation/core/menu/menu_item.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class MenuBar extends StatelessWidget {
   const MenuBar({Key? key}) : super(key: key);
@@ -27,11 +28,25 @@ class MenuBar extends StatelessWidget {
         children: const [
           FlutterHomeLogo(),
           Spacer(),
-          MenuItemNew(text: "Docs"),
-          MenuItemNew(text: "Showcase"),
-          MenuItemNew(text: "Development"),
-          MenuItemNew(text: "Ecosystem"),
-          GetStartedButton(),
+          MenuItemNew(
+            text: "Docs",
+            inDrawer: false,
+          ),
+          MenuItemNew(
+            text: "Showcase",
+            inDrawer: false,
+          ),
+          MenuItemNew(
+            text: "Development",
+            inDrawer: false,
+          ),
+          MenuItemNew(
+            text: "Ecosystem",
+            inDrawer: false,
+          ),
+          GetStartedButton(
+            inDrawer: false,
+          ),
         ],
       ),
     );
